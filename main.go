@@ -5,7 +5,7 @@ import "github.com/gofiber/fiber/v2"
 func main() {
 	app := fiber.New()
 	app.Get("/", func(c *fiber.Ctx) error {
-		c.Send([]byte("hello"))
+		c.Send([]byte("hello world"))
 		return nil
 	})
 	app.Listen(":3000")
