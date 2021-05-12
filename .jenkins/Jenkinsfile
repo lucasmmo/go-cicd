@@ -26,6 +26,11 @@ pipeline {
             steps { 
                 sh "docker rmi $registry:$BUILD_NUMBER" 
             }
+        }
+        stage('Docker deploy') { 
+            steps { 
+                ansiblePlaybook credentialsId: 'ec2-dev-web', disableHostKeyChecking: true, extras: 'DOCKER_TAG=${BUILD_NUMBER}', installation: 'ansible', inventory: '.ansible/dev.inv', playbook: '.ansible/deploy-playbook.yml'
+            }
         } 
     }
 }
