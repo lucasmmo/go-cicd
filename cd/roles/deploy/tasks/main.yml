@@ -48,3 +48,5 @@
     restart_policy: always
     published_ports:
       - 0.0.0.0:3001:3000
+  notify:
+  - Reboot nginx service
