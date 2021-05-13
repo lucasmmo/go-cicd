@@ -13,7 +13,7 @@
 - name: Copy nginx config files
   template:
     src: "../files/nginx.conf"
-    dest: "/etc/nginx/nginx.conf"
+    dest: "/etc/nginx/conf.d/nginx.conf"
     mode: 0644
   notify:
   - Reboot nginx service
