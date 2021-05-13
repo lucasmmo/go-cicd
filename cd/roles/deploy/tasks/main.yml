@@ -39,7 +39,7 @@
     state: present
 - name: Start the container 1
   docker_container:
-    name: go-test
+    name: go-app-1
     image: "lucasmocerinomonteiro/go-test-app:{{DOCKER_TAG}}"
     state: started
     restart_policy: always
@@ -47,7 +47,7 @@
       - 0.0.0.0:3000:3000
 - name: Start the container 2
   docker_container:
-    name: go-test
+    name: go-app-2
     image: "lucasmocerinomonteiro/go-test-app:{{DOCKER_TAG}}"
     state: started
     restart_policy: always
